@@ -1,0 +1,15 @@
+.todoListOpt {
+  padding: 10px;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+}
+
+.todo {
+  word-wrap: break-word;
+}
+
+.removeButton {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
