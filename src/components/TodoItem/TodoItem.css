@@ -7,9 +7,3 @@
 .todo {
   word-wrap: break-word;
 }
-
-.removeButton {
-  position: absolute;
-  right: 10px;
-  cursor: pointer;
-}

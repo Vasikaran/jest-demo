@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import TodoItem from '../../components/TodoItem';
-import SearchBox from '../../components/SearchBox';
+import TodoItem from '../../components/TodoItem/TodoItem';
+import SearchBox from '../../components/SearchBox/SearchBox';
 
 import { getTodos, removeTodo } from '../../actionCreators';
 
 import style from './TodoContainer.css';
 
-class TodoContainer extends Component {
+export class TodoContainer extends Component {
   constructor(props) {
     super(props);
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Button from '../Button/Button';
 import style from './TodoItem.css';
 
 export default class TodoItem extends Component {
@@ -39,15 +40,14 @@ export default class TodoItem extends Component {
         className={style.todoListOpt}
         onMouseOver={this.handleHover}
         onMouseLeave={this.handleMouseLeave}
+        data-testid={'todoItem'}
       >
         <span className={style.todo}>
           {index !== 'none' ? `${index + 1}. ${todo}` : todo}
         </span>
         {isShow &&
           !disableRemove && (
-            <span onClick={this.handleClick} className={style.removeButton}>
-              Remove
-            </span>
+            <Button onClick={this.handleClick} name={'Remove'} />
           )}
       </div>
     );

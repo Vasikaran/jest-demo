@@ -39,7 +39,7 @@ export class SearchBox extends Component {
 
   handleAddTodo(event = false, todo) {
     event && event.stopPropagation();
-    let { addTodo, getTodos, updateSearchMode } = this.props;
+    let { addTodo, getTodos } = this.props;
     let { searchString } = this.state;
     addTodo(todo ? todo : searchString).then(() => {
       getTodos();
@@ -58,7 +58,7 @@ export class SearchBox extends Component {
           onChange={this.handleChange}
           value={searchString}
         />
-        <span onClick={this.handleAddTodo}>
+        <span onClick={this.handleAddTodo} data-testid={'addTodo'}>
           <b className={style.addSpan}>+</b>
         </span>
       </div>
