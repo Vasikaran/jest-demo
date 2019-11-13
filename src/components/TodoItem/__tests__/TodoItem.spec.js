@@ -1,9 +1,10 @@
 import TodoItem from '../TodoItem';
 import expect from 'expect';
+import jest from 'jest-mock';
 
-let removeTodo = expect.createSpy();
+let removeTodo = jest.fn();
 
-describe(`TodoItem's unit test cases`, () => {
+describe('TodoItem\'s unit test cases', () => {
   let { renderedDOM, props } = global.setup(TodoItem, {
     index: 1,
     todo: 'Todo 1',
@@ -16,7 +17,7 @@ describe(`TodoItem's unit test cases`, () => {
     'todoItem'
   );
 
-  it(`Check whether todoItem mounted or not`, () => {
+  it('Check whether todoItem mounted or not', () => {
     expect(global.TestUtils.isDOMComponent(todoItem)).toBeTruthy();
   });
 
@@ -46,7 +47,7 @@ describe(`TodoItem's unit test cases`, () => {
 
     global.TestUtils.Simulate.click(removeButton);
 
-    let todoIndex = props.removeTodo.calls[0].arguments[0];
+    let [[todoIndex]] = props.removeTodo.mock.calls;
 
     expect(todoIndex).toBe(1);
   });

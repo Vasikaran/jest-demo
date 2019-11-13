@@ -49,16 +49,16 @@ export class SearchBox extends Component {
   render() {
     let { searchString } = this.state;
     return (
-      <div className={style.inputBox} data-testid={'searchBox'}>
+      <div className={style.inputBox} data-id={'searchBox'}>
         <input
-          data-testid={'searchInput'}
+          data-id={'searchInput'}
           className={style.input}
           type={'text'}
           placeholder={'Search Todos'}
           onChange={this.handleChange}
           value={searchString}
         />
-        <span onClick={this.handleAddTodo} data-testid={'addTodo'}>
+        <span onClick={this.handleAddTodo} data-id={'addTodo'}>
           <b className={style.addSpan}>+</b>
         </span>
       </div>
@@ -103,10 +103,8 @@ export class SearchBox extends Component {
 }
 
 export default connect(
-  state => {
-    return {
-      isSearch: state.isSearch
-    };
-  },
+  state => ({
+    isSearch: state.isSearch
+  }),
   { getTodosBySearch, updateSearchMode, addTodo, getTodos }
 )(SearchBox);

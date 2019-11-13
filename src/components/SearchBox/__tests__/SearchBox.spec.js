@@ -1,8 +1,9 @@
 import expect from 'expect';
 import { SearchBox } from '../SearchBox';
+import jest from 'jest-mock';
 
-let getTodosBySearch = expect.createSpy();
-let updateSearchMode = expect.createSpy();
+let getTodosBySearch = jest.fn();
+let updateSearchMode = jest.fn();
 
 describe('SearchBox', () => {
   let defaultProps = {
@@ -32,9 +33,12 @@ describe('SearchBox', () => {
       target: { value: 'Todo 1' }
     });
 
-    let expectedData = props.getTodosBySearch.calls[0].arguments[0];
+    let [[expectedData]] = props.getTodosBySearch.mock.calls;
 
     expect(expectedData).toEqual('Todo 1');
-    expect(props.updateSearchMode.calls[0].arguments[0]).toBeTruthy();
+
+    let [[data]] = props.updateSearchMode.mock.calls;
+
+    expect(data).toBeTruthy();
   });
 });

@@ -4,12 +4,12 @@
   "description": "Having test cases for a demo",
   "main": "index.js",
   "scripts": {
-    "start": "fz-react-cli start",
-    "test": "fz-react-cli test"
+    "start": "react-cli start",
+    "test": "react-cli test"
   },
   "author": "Vasikaran <vasikaran.25@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "fz-react-cli": "0.0.3-beta.113"
+    "@zohodesk/react-cli": "0.0.1-beta.71"
   }
 }

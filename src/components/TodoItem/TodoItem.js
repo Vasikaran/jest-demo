@@ -40,15 +40,14 @@ export default class TodoItem extends Component {
         className={style.todoListOpt}
         onMouseOver={this.handleHover}
         onMouseLeave={this.handleMouseLeave}
-        data-testid={'todoItem'}
+        data-id={'todoItem'}
       >
         <span className={style.todo}>
           {index !== 'none' ? `${index + 1}. ${todo}` : todo}
         </span>
-        {isShow &&
-          !disableRemove && (
-            <Button onClick={this.handleClick} name={'Remove'} />
-          )}
+        {isShow && !disableRemove && (
+          <Button onClick={this.handleClick} name={'Remove'} />
+        )}
       </div>
     );
   }
